@@ -135,6 +135,7 @@ a:hover{
       margin: 0;
       text-align: center;
       padding: 80px 80px 72px 80px;
+      background-image: none;
     }
     a.button{
       padding: 15px 55px;
