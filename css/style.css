@@ -123,3 +123,22 @@ a:hover{
       padding: 15px 55px;
     }
 }
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+        .wrapper{
+      background: #fff;
+      box-shadow: none;
+      margin: 0;
+      text-align: center;
+      padding: 80px 80px 72px 80px;
+    }
+    a.button{
+      padding: 15px 55px;
+    }
+}
+
+}
