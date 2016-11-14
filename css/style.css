@@ -107,3 +107,19 @@ a.button{
 a:hover{
   background: #BA2323;
 }
+
+
+
+/* ----------- Retina Screens ----------- */
+@media only screen and (max-width: 500px) {
+    .wrapper{
+      background: #fff;
+      box-shadow: none;
+      margin: 0;
+      text-align: center;
+      padding: 80px 80px 72px 80px;
+    }
+    a.button{
+      padding: 15px 55px;
+    }
+}
