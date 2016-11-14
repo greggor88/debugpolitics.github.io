@@ -119,8 +119,15 @@ a:hover{
       text-align: center;
       padding: 80px 80px 72px 80px;
     }
+    p{
+      font-size: 18px;
+      line-height: 28px;
+    }
     a.button{
       padding: 15px 55px;
+    }
+    body{
+      background-image: none;
     }
 }
 
@@ -138,9 +145,6 @@ a:hover{
     }
     a.button{
       padding: 15px 55px;
-    }
-    body {
-      background-image: none;
     }
 }
 
