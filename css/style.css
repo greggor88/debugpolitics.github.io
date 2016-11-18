@@ -105,10 +105,20 @@ a.button{
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   margin-top: 24px;
+  margin-bottom: 44px;
 }
 
 a.button:hover{
   background: #BA2323;
+}
+
+.email {
+  margin-top: 84px;
+  font-size: 14px;
+}
+
+.email a {
+  color: #aaa;
 }
 
 .wrapper li{
