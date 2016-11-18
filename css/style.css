@@ -44,6 +44,9 @@ blockquote, q {
 a, a:visited, a:focus {
   text-decoration: none; }
 
+h2{
+  font-size: 1.5em;
+}
 
 body {
   height: 100%;
@@ -104,10 +107,26 @@ a.button{
   margin-top: 24px;
 }
 
-a:hover{
+a.button:hover{
   background: #BA2323;
 }
 
+.wrapper li{
+  margin-bottom: 20px;
+}
+
+.wrapper li a{
+    color: #2E3133;
+}
+
+.wrapper li a:hover{
+  text-decoration: underline;
+}
+
+ul{
+ border-top: solid 3px #C9D0D4;
+  padding-top: 32px; 
+}
 
 
 /* ----------- Retina Screens ----------- */
@@ -117,7 +136,7 @@ a:hover{
       box-shadow: none;
       margin: 0;
       text-align: center;
-      padding: 80px 80px 72px 80px;
+      padding: 80px 40px 72px 40px;
     }
     p{
       font-size: 18px;
@@ -127,7 +146,8 @@ a:hover{
       padding: 15px 55px;
     }
     body{
-      background-image: none;
+  background-image: none;
+
     }
 }
 
@@ -141,7 +161,7 @@ a:hover{
       box-shadow: none;
       margin: 0;
       text-align: center;
-      padding: 80px 80px 72px 80px;
+      padding: 80px 40px 72px 40px;
     }
     a.button{
       padding: 15px 55px;
