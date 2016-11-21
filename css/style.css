@@ -1,6 +1,6 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, 
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, 
-font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
 dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ a:active {
   outline: none; }
 
 body {
-  line-height: 1;
+  line-height: 1.6;
   color: black;
   background: white;
   font-size: 14px; }
@@ -51,7 +51,7 @@ h2{
 body {
   height: 100%;
   margin: 0;
-  padding: 0; 
+  padding: 0;
   background-image: url('../assets/background.jpg');
   background-size:cover;
   background-repeat: no-repeat;
@@ -77,7 +77,7 @@ p {
 
 p.border {
  border-top: solid 3px #C9D0D4;
- padding-top: 32px; 
+ padding-top: 32px;
 }
 
 p:last-child{
@@ -113,7 +113,7 @@ a.button:hover{
 }
 
 .email {
-  margin-top: 84px;
+  margin-top: 64px;
   font-size: 14px;
 }
 
@@ -126,16 +126,22 @@ a.button:hover{
 }
 
 .wrapper li a{
-    color: #2E3133;
+  color: rgb(31, 76, 131);
+  border-bottom: 1px solid rgba(31, 76, 131, 0.3);
 }
 
 .wrapper li a:hover{
-  text-decoration: underline;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31, 76, 131, 0.6);
 }
 
 ul{
- border-top: solid 3px #C9D0D4;
-  padding-top: 32px; 
+  border-top: solid 3px #C9D0D4;
+  padding: 32px 0;
+}
+
+strong {
+  font-weight: bold;
 }
 
 
@@ -162,10 +168,10 @@ ul{
 }
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2) { 
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
         .wrapper{
       background: #fff;
       box-shadow: none;
@@ -178,4 +184,10 @@ ul{
     }
 }
 
+@media only screen and (min-width: 800px) {
+  .wrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
