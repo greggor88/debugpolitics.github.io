@@ -69,23 +69,21 @@ body {
 p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
-  font-size: 16px;
   color: #2E3133;
-  line-height: 26px;
-  margin-bottom: 24px;
+  margin-bottom: 1.6em;
 }
 
-p.border {
- border-top: solid 3px #C9D0D4;
- padding-top: 32px;
+#intro p {
+  font-size: 1.2em;
 }
 
-p:last-child{
-  margin-bottom: 24px;
+h2 {
+  margin-bottom: .6em;
 }
 
 a {
-  color: #004E87; }
+  color: #004E87;
+}
 
 
 .wrapper{
@@ -93,7 +91,7 @@ a {
   box-shadow: 0 2px 20px 0 rgba(0,0,0,0.20);
   margin: 6% 10% 10%;
   text-align: center;
-  padding: 80px 80px 72px 80px;
+  padding: 5.6em 5.6em 5em;
 }
 
 a.button{
@@ -111,31 +109,30 @@ a.button:hover{
 }
 
 .email {
-  margin-top: 64px;
-  font-size: 14px;
+  margin-top: 4em;
 }
 
 .email a {
   color: #aaa;
 }
 
-.wrapper li{
-  margin-bottom: 20px;
+.wrapper li {
+  margin-bottom: 1.2em;
 }
 
-.wrapper li a{
+.wrapper li a {
   color: rgb(31, 76, 131);
   border-bottom: 1px solid rgba(31, 76, 131, 0.3);
 }
 
-.wrapper li a:hover{
+.wrapper li a:hover {
   text-decoration: none;
   border-bottom: 1px solid rgba(31, 76, 131, 0.6);
 }
 
 section {
   border-top: solid 3px #C9D0D4;
-  padding: 44px 0;
+  padding: 3em 0;
 }
 
 strong {
@@ -145,23 +142,18 @@ strong {
 
 /* ----------- Retina Screens ----------- */
 @media only screen and (max-width: 500px) {
-    .wrapper{
-      background: #fff;
-      box-shadow: none;
-      margin: 0;
-      text-align: center;
-      padding: 80px 40px 72px 40px;
-    }
-    p{
-      font-size: 18px;
-      line-height: 28px;
-    }
-    section {
-      padding: 32px 0;
-    }
-    body{
-      background-image: none;
-    }
+  body {
+    font-size: 12px;
+  }
+  .wrapper{
+    background: #fff;
+    box-shadow: none;
+    margin: 0;
+    text-align: center;
+  }
+  body{
+    background-image: none;
+  }
 }
 
 /* Portrait and Landscape */
@@ -174,7 +166,6 @@ strong {
       box-shadow: none;
       margin: 0;
       text-align: center;
-      padding: 80px 40px 72px 40px;
     }
 }
 
