@@ -104,8 +104,6 @@ a.button{
   display: inline-block;
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
-  margin-top: 24px;
-  margin-bottom: 44px;
 }
 
 a.button:hover{
@@ -135,9 +133,9 @@ a.button:hover{
   border-bottom: 1px solid rgba(31, 76, 131, 0.6);
 }
 
-ul{
+section {
   border-top: solid 3px #C9D0D4;
-  padding: 32px 0;
+  padding: 44px 0;
 }
 
 strong {
@@ -158,12 +156,11 @@ strong {
       font-size: 18px;
       line-height: 28px;
     }
-    a.button{
-      padding: 15px 55px;
+    section {
+      padding: 32px 0;
     }
     body{
-  background-image: none;
-
+      background-image: none;
     }
 }
 
@@ -172,15 +169,12 @@ strong {
   and (min-device-width: 375px)
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2) {
-        .wrapper{
+    .wrapper{
       background: #fff;
       box-shadow: none;
       margin: 0;
       text-align: center;
       padding: 80px 40px 72px 40px;
-    }
-    a.button{
-      padding: 15px 55px;
     }
 }
 
