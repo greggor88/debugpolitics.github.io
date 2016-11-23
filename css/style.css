@@ -108,12 +108,17 @@ a.button:hover{
   background: #BA2323;
 }
 
-.email {
+footer {
   margin-top: 4em;
 }
 
-.email a {
+footer a {
   color: #aaa;
+}
+
+footer .social a {
+  font-size: 1.6em;
+  margin: 0 .5em;
 }
 
 .wrapper li {
