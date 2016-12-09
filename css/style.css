@@ -144,6 +144,22 @@ strong {
   font-weight: bold;
 }
 
+@font-face {
+    font-family: outage;
+    src: url('../assets/Outage.ttf');
+}
+
+.outage-font {
+    font-family: outage;
+}
+
+#countdown-clock {
+    font-size: 100pt;
+}
+
+#clock-label {
+    font-size: 40pt;
+}
 
 /* ----------- Retina Screens ----------- */
 @media only screen and (max-width: 500px) {

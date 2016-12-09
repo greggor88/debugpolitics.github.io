@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+
+<body>
+  <form id="countdown-setup-form" style="padding-top: 40px; padding-left: 40px;">
+    Year: <input type="number" id="year" name="year" min="2016" max="2100" disabled><br>
+    Month: <input type="number" id="month" name="month" min="1" max="12" disabled><br>
+    Day: <input type="number" id="day" name="day" min="1" max="31" disabled><br>
+    <hr>
+    <h3>Local time!</h3>
+
+    Hour: <input type="number" id="hour" name="hour" min="0" max="24" disabled><br>
+    Minute: <input type="number" id="minute" name="minute" min="0" max="60" disabled><br>
+    Seconds: <input type="number" id="seconds" name="seconds" min="0" max="60" disabled><br>
+    <hr>
+    Label (optional): <input type="text" id="label" name="label" disabled><br><br>
+
+    <input type="submit" id="submit-button" value="Setup clock!">
+  </form>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var yearElement = document.getElementById('year');
+    var monthElement = document.getElementById('month');
+    var dayElement = document.getElementById('day');
+    var hourElement = document.getElementById('hour');
+    var minuteElement = document.getElementById('minute');
+    var secondsElement = document.getElementById('seconds');
+    var labelElement = document.getElementById('label');
+    var submitButton = document.getElementById('submit-button');
+
+    var setDefaults = function () {
+      var now = new Date();
+      yearElement.value = now.getFullYear();
+      monthElement.value = now.getMonth() + 1;
+      dayElement.value = now.getDate();
+      hourElement.value = now.getHours();
+      minuteElement.value = now.getMinutes();
+      secondsElement.value = 0;
+
+      yearElement.disabled = false;
+      monthElement.disabled = false;
+      dayElement.disabled = false;
+      hourElement.disabled = false;
+      minuteElement.disabled = false;
+      secondsElement.disabled = false;
+      labelElement.disabled = false;
+    }();
+
+    submitButton.addEventListener('click', function (e) {
+      e.preventDefault(); 
+      var toDate = new Date(yearElement.value, monthElement.value - 1, dayElement.value,
+                            hourElement.value, minuteElement.value, secondsElement.value);
+      
+      window.location.href = 'clock.html?to=' + toDate.getTime() + "&label=" + labelElement.value;
+    });
+  });
+</script>
+</html>
