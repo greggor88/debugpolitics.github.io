@@ -1,87 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Debug Politics</title>
-  <meta name="description" content="
-  Debug Politics is a hackathon for anyone dissatisfied with the 2016 election cycle. Transform your dissatisfaction into a unique idea. Let's use our talents as developers, designers, marketers, entrepreneurs, etc. to find innovative ways to make a real difference.">
-  <meta name="og:image" content="http://www.debugpolitics.com/assets/flag_720.png">
-  <meta name="twitter:image" content="http://www.debugpolitics.com/assets/flag_720.png">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="shortcut icon" href="../assets/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <img class="logo" src="../assets/logo.svg" alt="debug Politics">
+  <form id="countdown-setup-form" style="padding-top: 40px; padding-left: 40px;">
+    Year: <input type="number" id="year" name="year" min="2016" max="2100" disabled><br>
+    Month: <input type="number" id="month" name="month" min="1" max="12" disabled><br>
+    Day: <input type="number" id="day" name="day" min="1" max="31" disabled><br>
+    <hr>
+    <h3>Local time!</h3>
 
-    <section id="intro">
-      <div id="countdown-clock" class="outage-font">
-      </div>
+    Hour: <input type="number" id="hour" name="hour" min="0" max="24" disabled><br>
+    Minute: <input type="number" id="minute" name="minute" min="0" max="60" disabled><br>
+    Seconds: <input type="number" id="seconds" name="seconds" min="0" max="60" disabled><br>
+    <hr>
+    Label (optional): <input type="text" id="label" name="label" disabled><br><br>
 
-      <div id="clock-label" class="outage-font">
-      </div>
-    </section>
-  </div><!--wrapper-->
+    <input type="submit" id="submit-button" value="Setup clock!">
+  </form>
 </body>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) { 
-    var clockElement = document.getElementById('countdown-clock');
-    var labelElement = document.getElementById('clock-label');
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var yearElement = document.getElementById('year');
+    var monthElement = document.getElementById('month');
+    var dayElement = document.getElementById('day');
+    var hourElement = document.getElementById('hour');
+    var minuteElement = document.getElementById('minute');
+    var secondsElement = document.getElementById('seconds');
+    var labelElement = document.getElementById('label');
+    var submitButton = document.getElementById('submit-button');
 
-    var QueryString = function () {
-      var res = {};
-      var query = window.location.search.substring(1);
-      var vars = query.split("&");
-      for (var i=0;i<vars.length;i++) {
-        var pair = vars[i].split("=");
-        if (typeof res[pair[0]] === "undefined") {
-          res[pair[0]] = decodeURIComponent(pair[1]);
-        } else if (typeof res[pair[0]] === "string") {
-          var arr = [res[pair[0]],decodeURIComponent(pair[1])];
-          res[pair[0]] = arr;
-        } else {
-          res[pair[0]].push(decodeURIComponent(pair[1]));
-        }
-      } 
-      return res;
+    var setDefaults = function () {
+      var now = new Date();
+      yearElement.value = now.getFullYear();
+      monthElement.value = now.getMonth() + 1;
+      dayElement.value = now.getDate();
+      hourElement.value = now.getHours();
+      minuteElement.value = now.getMinutes();
+      secondsElement.value = 0;
+
+      yearElement.disabled = false;
+      monthElement.disabled = false;
+      dayElement.disabled = false;
+      hourElement.disabled = false;
+      minuteElement.disabled = false;
+      secondsElement.disabled = false;
+      labelElement.disabled = false;
     }();
 
-    var normalizeDigits = function (x) {
-      var parsedX = parseInt(x, 10);
-      return (parsedX > 9) ? String(parsedX) : '0' + parsedX;
-    }
-
-    var setLabel = function () {
-      if (QueryString.label) {
-        labelElement.innerHTML = QueryString.label;
-      }
-    }();
-
-    var setClock = function () {
-      if (QueryString.to) {
-        setInterval(function () {
-          var nowInMs = Date.now();
-          var differenceInMs = (QueryString.to) - nowInMs;
-          var clockDisplay = "00:00:00";
-
-          if (differenceInMs > 0) {
-            var hours = normalizeDigits(differenceInMs / (1000 * 60 *60));
-            var rest = differenceInMs % (1000 * 60 * 60);
-            var minutes = normalizeDigits(rest / (1000 * 60));
-            rest = rest % (1000 * 60);
-            var seconds = normalizeDigits(rest / 1000);
-
-            clockDisplay = hours + ':' + minutes + ':' + seconds;
-          }
-
-          clockElement.innerHTML = clockDisplay;
-        }, 1000);
-      }
-    }();
+    submitButton.addEventListener('click', function (e) {
+      e.preventDefault(); 
+      var toDate = new Date(yearElement.value, monthElement.value - 1, dayElement.value,
+                            hourElement.value, minuteElement.value, secondsElement.value);
+      
+      window.location.href = 'clock.html?to=' + toDate.getTime() + "&label=" + labelElement.value;
+    });
   });
 </script>
 </html>
