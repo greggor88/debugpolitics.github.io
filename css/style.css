@@ -161,6 +161,16 @@ strong {
     font-size: 40pt;
 }
 
+#five-hundred {
+  background-image: url('../assets/500_logo.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ----------- Retina Screens ----------- */
 @media only screen and (max-width: 500px) {
   body {
